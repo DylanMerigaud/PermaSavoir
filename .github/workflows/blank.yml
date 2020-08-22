@@ -22,10 +22,10 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Run a one-line script
+    - name: Install Calibre
       run: sudo apt-get -y install calibre
     
-    - run: ebook-convert SUMMARY.md SUMMARY.epub
+    - run: ebook-convert --txt-output-encoding "ISO-8859-15" SUMMARY.md SUMMARY.epub 
       
     - run: ls
       
