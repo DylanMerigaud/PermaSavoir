@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [14.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -27,3 +27,8 @@ jobs:
     - run: npm install ebook-convert
     - run: npm ebook-convert SUMMARY.md SUMMARY.epub
     - run: ls
+    - name: Upload epub
+      uses: actions/upload-artifact@v2
+      with:
+        name: epub
+        path: SUMMARY.epub
