@@ -6,7 +6,7 @@
 
 * [Maison en torchie](habitation/untitled/README.md)
   * [Isolation](habitation/untitled/isolation.md)
-  * [Enduits](habitation/untitled/untitled.md)
+  * [Enduit](habitation/untitled/enduit.md)
 
 ## Jardinage
 
