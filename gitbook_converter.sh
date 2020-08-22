@@ -14,7 +14,11 @@ if [ -d "$GITBOOK_REP" ]; then
       grep -o '<a href=['"'"'"][^"'"'"']*['"'"'"]' | \
       sed -e 's/^<a href=["'"'"']//' -e 's/["'"'"']$//'| \
       xargs cat | \
-      pandoc -f markdown --toc -o book.epub | \
+      pandoc -f markdown --toc -o book.epub
+    pandoc $SUMMARY_FILE -t html | \
+      grep -o '<a href=['"'"'"][^"'"'"']*['"'"'"]' | \
+      sed -e 's/^<a href=["'"'"']//' -e 's/["'"'"']$//'| \
+      xargs cat | \
       pandoc -f markdown --toc -o book.pdf
   else
     echo "File '$SUMMARY_FILE' does not exist"
