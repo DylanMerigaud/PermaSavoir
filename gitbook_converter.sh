@@ -9,6 +9,8 @@ if [ -d "$GITBOOK_REP" ]; then
   echo "Entering directory '$GITBOOK_REP'..."
   cd $GITBOOK_REP
   if [ -f "$SUMMARY_FILE" ]; then
+    pandoc $SUMMARY_FILE -t html |
+      cat
     # read summary and get texts by order in a single big file
     pandoc $SUMMARY_FILE -t html | \
       grep -o '<a href=['"'"'"][^"'"'"']*['"'"'"]' | \
@@ -20,6 +22,7 @@ if [ -d "$GITBOOK_REP" ]; then
       sed -e 's/^<a href=["'"'"']//' -e 's/["'"'"']$//'| \
       xargs cat | \
       pandoc -f markdown --toc -o book.pdf
+    echo "Done"
   else
     echo "File '$SUMMARY_FILE' does not exist"
   fi
