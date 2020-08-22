@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run a one-line script
-      run: sudo apt-get -y install calibre
+      run: sudo apt-get -y install pandoc
     
     - run: pandoc SUMMARY.md -o SUMMARY.pdf
     
