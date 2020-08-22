@@ -25,9 +25,7 @@ jobs:
     - name: Run a one-line script
       run: sudo apt-get -y install pandoc texlive
     
-    - run: pandoc SUMMARY.md -o SUMMARY.pdf
-    
-    - run: pandoc SUMMARY.md -o SUMMARY.epub
+    - run: ./gitbook_converter.sh
       
     - run: ls
       
