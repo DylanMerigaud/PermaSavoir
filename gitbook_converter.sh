@@ -1,6 +1,6 @@
 # #!/bin/bash
 
-GITBOOK_REP=$1
+GITBOOK_REP=$PWD
 SUMMARY_FILE="SUMMARY.md"
 echo $OUTPUT_FILE
 
