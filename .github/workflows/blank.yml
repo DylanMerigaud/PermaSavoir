@@ -25,7 +25,9 @@ jobs:
     - name: Run a one-line script
       run: sudo apt-get -y install calibre
     
-    - run: ebook-convert SUMMARY.md SUMMARY.epub
+    - run: pandoc SUMMARY.md -o SUMMARY.pdf
+    
+    - run: pandoc SUMMARY.md -o SUMMARY.epub
       
     - run: ls
       
@@ -34,3 +36,9 @@ jobs:
       with:
         name: epub
         path: SUMMARY.epub
+    
+    - name: Upload pdf
+      uses: actions/upload-artifact@v2
+      with:
+        name: epub
+        path: SUMMARY.pdf
