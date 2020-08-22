@@ -24,8 +24,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install ebook-convert
-    - run: npm run ebook-convert SUMMARY.md SUMMARY.epub
+    - run: npm install ebook-convert -g
+    - run: ebook-convert SUMMARY.md SUMMARY.epub
     - run: ls
     - name: Upload epub
       uses: actions/upload-artifact@v2
