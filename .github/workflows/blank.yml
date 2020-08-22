@@ -25,7 +25,7 @@ jobs:
     - name: Run a one-line script
       run: sudo apt-get -y install pandoc texlive
     
-    - run: ./gitbook_converter.sh
+    - run: bash ./gitbook_converter.sh
       
     - run: ls
       
